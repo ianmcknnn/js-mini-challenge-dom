@@ -26,6 +26,7 @@ Figure out what you need to change to give Javascript access to the `h1#header` 
 
 **YOUR NOTES**
 ```
+Fixed by moving script elements to bottom of html file, declaring header as a const, and changing the querySelector argument to be "h1#header".
 
 ```
 
@@ -35,6 +36,7 @@ Now that you have access to the `h1#header` element, use Javascript to change th
 
 **YOUR NOTES**
 ```
+One-line: 'header.style.color = "red"'
 
 ```
 
@@ -57,6 +59,12 @@ Create a DOM element that looks like this for each player and append it to the `
 
 **YOUR NOTES**
 ```
+This was done in several steps. First find the player-container element and set it to a variable 'container'. 
+Next, initiate a for-loop with indices 0 to PLAYERS.length. For each element of PLAYERS, create a new div, h3, img, and em element. Assign the relevant attributes (name and data-number) to the div with '.className = ' and '.setAttribute("data-number", PLAYERS[i]["number"])'. 
+Set the innerText of the em element to the value of the current player's nickname. 
+Set 'name.innerHTML = `${PLAYERS[i]["name"]} (${nickname.outerHTML})`(here, nickname is the name of the em element we created and name is the name of the h3 element).
+The img src and alt text can be set by using 'img.src = ' and 'img.alt = '.
+Now that all the relevant elements have been created, simply append them to the div one at a time, and then append the div to the container element. 
 
 ```
 
@@ -68,5 +76,7 @@ Hint: You can use `querySelector` with [CSS Attribute Selectors](https://develop
 
 **YOUR NOTES**
 ```
+Find the imposter with querySelector and "div.player-container div.player[data-number='7']".
+Then container.removeChild(imposter) to remove.
 
 ```
